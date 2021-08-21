@@ -1,0 +1,19 @@
+.button {
+  padding: 10px;
+  background-color: cadetblue;
+  color: white;
+  border-color: transparent;
+  margin: 0 5px;
+  transition: all 200ms ease;
+
+  &:hover,
+  &:focus {
+    background-color: lightseagreen;
+    // color: black;
+    // border-color: cadetblue;
+  }
+
+  &:active {
+    text-decoration: underline 1px;
+  }
+}

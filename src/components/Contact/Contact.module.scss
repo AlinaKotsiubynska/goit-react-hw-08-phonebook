@@ -1,0 +1,14 @@
+.contact {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  align-items: center;
+
+  & span {
+    flex-basis: 30%;
+    margin: 0 5px;
+    min-width: 60px;
+    word-wrap: break-word;
+  }
+}

@@ -1,0 +1,47 @@
+.container {
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  & svg {
+    font-size: 2em;
+    margin: 0 10px 0 0;
+  }
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+  text-decoration: underline double cadetblue 3px;
+}
+
+.content {
+  width: 100%;
+
+  @media screen and (min-width: 700px) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.newContact {
+  max-width: 400px;
+  padding: 10px;
+  flex-basis: 50%;
+  // flex-shrink: 0;
+  margin: 0 auto;
+}
+
+.contacts {
+  height: 300px;
+  max-height: 100%;
+  max-width: 400px;
+  padding: 10px;
+  // flex-grow: 1;
+  flex-basis: 50%;
+  margin: 0 auto;
+}
