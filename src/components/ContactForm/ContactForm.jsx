@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { notify, isNameUnique } from 'utils';
-import { saveLocal } from 'utils/localStorageSaveContacts';
 import { getContacts } from 'redux/selectors';
 import { addContact } from 'redux/thunks/contactsThunks';
 import Button from 'components/Button';
@@ -16,9 +15,7 @@ export default function ContactForm() {
 
   const [{ contactName, contactNumber }, setContact] = useState(initialState);
 
-  useEffect(() => {
-    saveLocal(contacts);
-  }, [contacts]);
+  useEffect(() => {}, [contacts]);
 
   const handleChange = ({ target: { name, value } }) => {
     setContact(prev => ({ ...prev, [name]: value }));

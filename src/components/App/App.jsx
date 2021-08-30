@@ -1,44 +1,39 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { Route, Switch, NavLink, Redirect } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import { FiUserPlus, FiUsers, FiBookOpen } from 'react-icons/fi';
-import { getContacts } from 'redux/selectors';
-import { getContactsAll } from 'redux/thunks/contactsThunks';
-import ContactForm from 'components/ContactForm';
-import ContactList from 'components/ContactList';
-import Filter from 'components/Filter';
+import LoginPage from 'pages/LoginPage/LoginPage';
+import RegisterPage from 'pages/RegisterPage/RegisterPage';
+import ContactsPage from 'pages/ContactsPage/ContactsPage';
 
 import s from './App.module.scss';
 
 export default function App() {
-  const contacts = useSelector(getContacts);
-  const dispatch = useDispatch();
-  useEffect(() => dispatch(getContactsAll()), [dispatch]);
-
   return (
     <div className={s.container}>
-      <div className={s.header}>
-        <FiBookOpen />
-        <h1 className={s.title}> Phonebook</h1>
-      </div>
-
-      <div className={s.content}>
-        <section className={s.newContact}>
-          <h2>
-            <FiUserPlus /> New contact
-          </h2>
-          <ContactForm />
-        </section>
-
-        <section className={s.contacts}>
-          <h2>
-            <FiUsers /> Contacts
-          </h2>
-          {contacts.length > 0 && <Filter />}
-          <ContactList />
-        </section>
-      </div>
-
+      <header>
+        <p>PhoneBook</p>
+        <NavLink to="/login" activeStyle={{ color: 'green' }}>
+          Login
+        </NavLink>
+        <NavLink to="/register" activeStyle={{ color: 'green' }}>
+          Register
+        </NavLink>
+        <NavLink to="/contacts" activeStyle={{ color: 'green' }}>
+          Contacts
+        </NavLink>
+      </header>
+      <hr />
+      <Switch>
+        <Route path={'/login'}>
+          <LoginPage />
+        </Route>
+        <Route path={'/register'}>
+          <RegisterPage />
+        </Route>
+        <Route path={'/contacts'}>
+          <ContactsPage />
+        </Route>
+        <Redirect to={'/login'} />
+      </Switch>
       <Toaster />
     </div>
   );
