@@ -7,7 +7,7 @@ export const getContactsAllFetch = async () => {
 
 export const deleteContactFetch = async id => {
   const responce = await axios.delete(`/contacts/${id}`);
-  return responce.data;
+  return id;
 };
 
 export const addContactFetch = async contact => {

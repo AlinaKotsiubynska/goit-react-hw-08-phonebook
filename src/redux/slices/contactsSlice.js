@@ -29,7 +29,7 @@ const contactsSlice = createSlice({
       state.loading = true;
     },
     [deleteContact.fulfilled]: (state, { payload }) => {
-      state.items = filterToDelete(state.items, payload.id);
+      state.items = filterToDelete(state.items, payload);
       state.loading = false;
     },
     [deleteContact.rejected]: (state, { payload }) => {
