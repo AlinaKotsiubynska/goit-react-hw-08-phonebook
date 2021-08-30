@@ -28,7 +28,7 @@ export default function ContactForm() {
   const handlerSubmit = e => {
     e.preventDefault();
     if (isNameUnique(contacts, contactName)) {
-      saveContact({ name: contactName, phone: contactNumber });
+      saveContact({ name: contactName, number: contactNumber });
       reset();
     } else {
       notify.error(contactName);
