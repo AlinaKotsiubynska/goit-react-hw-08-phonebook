@@ -47,6 +47,9 @@ const contactsSlice = createSlice({
       state.error = payload;
       state.loading = false;
     },
+    'auth/logout/fulfilled': state => {
+      state.items = [];
+    },
   },
 });
 
