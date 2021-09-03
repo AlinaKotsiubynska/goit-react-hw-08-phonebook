@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & svg {
+    font-size: 2em;
+    margin: 0 10px 0 0;
+  }
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+  text-decoration: underline double cadetblue 3px;
+}
+
+.logo {
+  display: flex;
+}
