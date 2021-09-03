@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Button from 'components/Button';
+import Button from 'components/shared/Button';
 import s from './Contact.module.scss';
 
 export default function Contact({ id, name, phone, onClick }) {

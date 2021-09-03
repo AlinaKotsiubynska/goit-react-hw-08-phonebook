@@ -13,10 +13,12 @@ import {
 } from 'redux-persist';
 import contactsReducer from 'redux/slices/contactsSlice';
 import filterReducer from 'redux/slices/filterSlice';
+import authReducer from 'redux/slices/authSlice';
 
 const rootReducer = combineReducers({
   contacts: contactsReducer,
   filter: filterReducer,
+  auth: authReducer,
 });
 
 const persistConfig = {

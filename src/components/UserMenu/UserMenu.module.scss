@@ -1,0 +1,32 @@
+.userMenu {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  display: block;
+  padding: 10px;
+  background-color: cadetblue;
+  color: white;
+  // border-color: transparent;
+  border: 3px solid transparent;
+  margin: 0 5px;
+  transition: all 200ms ease;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 1em;
+
+  &:hover,
+  &:focus {
+    background-color: lightseagreen;
+  }
+}
+
+.linkActive {
+  background-color: lightseagreen;
+  text-decoration: underline;
+}
+
+.name {
+  margin: 0;
+}

@@ -1,0 +1,14 @@
+.form {
+  & input {
+    display: block;
+    margin: 10px auto 0;
+    padding: 10px;
+    width: 95%;
+  }
+
+  & label {
+    text-align: left;
+    display: block;
+    margin-bottom: 20px;
+  }
+}

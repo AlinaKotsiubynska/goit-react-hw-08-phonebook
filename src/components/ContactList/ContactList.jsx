@@ -38,12 +38,12 @@ export default function ContactList() {
   }
   return (
     <ul className={s.contacts}>
-      {filteredContacts.map(({ id, name, phone }) => (
+      {filteredContacts.map(({ id, name, number }) => (
         <Contact
           key={id}
           id={id}
           name={name}
-          phone={phone}
+          phone={number}
           onClick={onDeleteHandler}
         />
       ))}

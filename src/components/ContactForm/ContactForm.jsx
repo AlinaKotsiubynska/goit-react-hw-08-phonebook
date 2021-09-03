@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { notify, isNameUnique } from 'utils';
 import { getContacts } from 'redux/selectors';
 import { addContact } from 'redux/thunks/contactsThunks';
-import Button from 'components/Button';
-import s from './ContactForm.module.scss';
+import Button from 'components/shared/Button';
+import Form from 'components/shared/Form/Form';
 
 export default function ContactForm() {
   const contacts = useSelector(getContacts);
@@ -28,7 +28,7 @@ export default function ContactForm() {
   const handlerSubmit = e => {
     e.preventDefault();
     if (isNameUnique(contacts, contactName)) {
-      saveContact({ name: contactName, phone: contactNumber });
+      saveContact({ name: contactName, number: contactNumber });
       reset();
     } else {
       notify.error(contactName);
@@ -36,13 +36,12 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handlerSubmit}>
-      <label className={s.label}>
+    <Form onSubmit={handlerSubmit} name={'newContact'}>
+      <label>
         Name
         <input
           required
           type="text"
-          className={s.input}
           value={contactName}
           onChange={handleChange}
           name="contactName"
@@ -51,12 +50,11 @@ export default function ContactForm() {
         />
       </label>
 
-      <label className={s.label}>
+      <label>
         Number
         <input
           required
           type="tel"
-          className={s.input}
           value={contactNumber}
           onChange={handleChange}
           name="contactNumber"
@@ -66,6 +64,6 @@ export default function ContactForm() {
       </label>
 
       <Button type="submit">Add contact</Button>
-    </form>
+    </Form>
   );
 }

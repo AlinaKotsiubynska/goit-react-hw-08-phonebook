@@ -29,7 +29,7 @@ const contactsSlice = createSlice({
       state.loading = true;
     },
     [deleteContact.fulfilled]: (state, { payload }) => {
-      state.items = filterToDelete(state.items, payload.id);
+      state.items = filterToDelete(state.items, payload);
       state.loading = false;
     },
     [deleteContact.rejected]: (state, { payload }) => {
@@ -46,6 +46,9 @@ const contactsSlice = createSlice({
     [addContact.rejected]: (state, { payload }) => {
       state.error = payload;
       state.loading = false;
+    },
+    'auth/logout/fulfilled': state => {
+      state.items = [];
     },
   },
 });
