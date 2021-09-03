@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { FiUser } from 'react-icons/fi';
 import { getIsLoggedIn, getUserName } from 'redux/selectors';
 import { logoutUser } from 'redux/thunks/authThunks';
 import Button from 'components/shared/Button/Button';
@@ -18,6 +19,7 @@ export default function UserMenu() {
       <div className={s.userMenu}>
         {isLoggedIn ? (
           <>
+            <FiUser />
             <p className={s.name}>{`Hello, ${userName}!`}</p>
             <Button type="button" onClick={handelLogout}>
               Sign out
